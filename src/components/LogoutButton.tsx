@@ -5,17 +5,16 @@ import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { logOutAction } from "@/actions/users";
 
-export default function LogoutButton() {
+export default function LogOutButton() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleLogout = async () => {
     setLoading(true);
     // 模拟加载过程
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    const errorMessage = null;
+    const { errorMessage } = await logOutAction();
 
     if (!errorMessage) {
       toast.success("Logged out", {
