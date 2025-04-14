@@ -1,9 +1,13 @@
-import React from "react";
+"use client";
 
-export function SidebarGroupContent() {
-  return (
-    <div>
-      <h1>SidebarGroupContent</h1>
-    </div>
-  );
+import { Note } from "@prisma/client";
+
+type Props = {
+  notes: Note[];
+};
+
+export function SidebarGroupContent({ notes }: Props) {
+  console.log(notes);
+
+  return <div>Your notes here</div>;
 }
