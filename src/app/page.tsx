@@ -31,7 +31,9 @@ export default async function HomePage({ searchParams }: Props) {
         <NewNoteButton user={user} />
       </div>
 
-      <NoteTextInput noteId={noteId} startingNoteText={note?.text || ""} />
+      <div className="w-full max-w-4xl">
+        <NoteTextInput noteId={noteId} startingNoteText={note?.text || ""} />
+      </div>
     </div>
   );
 }
