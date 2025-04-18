@@ -30,7 +30,7 @@ export default async function Header() {
         />
 
         <h1 className="flex flex-col pb-1 text-2xl leading-6 font-semibold">
-          AI <span>Notes</span>
+          股市新闻 <span>AI问答</span>
         </h1>
       </Link>
 

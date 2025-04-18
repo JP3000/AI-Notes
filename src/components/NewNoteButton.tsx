@@ -38,7 +38,7 @@ export default function NewNoteButton({ user }: Props) {
       className="w-24"
       disabled={loading}
     >
-      {loading ? <Loader2 className="animation-spin" /> : "New Note"}
+      {loading ? <Loader2 className="animation-spin" /> : "新备注"}
     </Button>
   );
 }

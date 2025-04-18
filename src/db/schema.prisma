@@ -16,10 +16,20 @@ model Note {
     updatedAt DateTime @default(now()) @updatedAt
 }
 
-model User {
+model FinNote {
     id        String   @id @default(uuid())
-    email     String   @unique
-    notes     Note[]
+    text      String
+    author    User     @relation(fields: [authorId], references: [id])
+    authorId  String
     createdAt DateTime @default(now())
     updatedAt DateTime @default(now()) @updatedAt
+}
+
+model User {
+    id        String    @id @default(uuid())
+    email     String    @unique
+    FinNote   FinNote[]
+    notes     Note[]
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @default(now()) @updatedAt
 }

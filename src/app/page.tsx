@@ -1,9 +1,12 @@
+"src/app/page.tsx";
+import React from "react";
 import { getUser } from "@/auth/server";
 import { AskAIButton } from "@/components/AskAIButton";
 import NewNoteButton from "@/components/NewNoteButton";
 import NoteTextInput from "@/components/NoteTextInput";
 import { prisma } from "@/db/prisma";
-import React from "react";
+import StockInfo from "@/components/stockInfo";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -29,6 +32,11 @@ export default async function HomePage({ searchParams }: Props) {
       <div className="flex w-full max-w-4xl justify-end gap-2">
         <AskAIButton user={user} />
         <NewNoteButton user={user} />
+        <Button>刷新最新消息</Button>
+      </div>
+
+      <div className="h-full w-full">
+        <StockInfo />
       </div>
 
       <div className="w-full max-w-4xl">

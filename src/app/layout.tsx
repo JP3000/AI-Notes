@@ -8,7 +8,7 @@ import AppSidebar from "@/components/AppSidebar";
 import NoteProvider from "@/providers/NoteProvider";
 
 export const metadata: Metadata = {
-  title: "AI Notes",
+  title: "股市新闻AI问答",
 };
 
 export default function RootLayout({
